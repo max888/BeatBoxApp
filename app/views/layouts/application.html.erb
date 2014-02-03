@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <% flash.each do |name, message| %>
+     <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+     </div>
+    <% end %>
+
+  <nav>
+    <%= link_to 'Users', users_path %>
+    <%= link_to 'Songs', songs_path %>
+  </nav>
 <%= yield %>
 
 </body>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @song.name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @song.genre %>
+</p>
+
+<audio controls>
+  <source src="<%=@song.file %>" type="audio/mpeg">
+  <source src="<%=@song.file %>" type="audio/ogg">
+  <embed height="50" width="100" src="<%=@song.file %>">
+</audio>
+
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
