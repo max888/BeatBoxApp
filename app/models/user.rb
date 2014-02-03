@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :banner_image, :bio, :email, :name, :user_image, :password,  :password_confirmation
+  attr_accessible :banner_image, :bio, :email, :name, :user_image, :password,  :password_confirmation, :role
   
   has_secure_password
-
-  # validates :email, presence: true, uniquness: true
+  
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
 
   mount_uploader :user_image, UserImageUploader
   mount_uploader :banner_image, BannerImageUploader
