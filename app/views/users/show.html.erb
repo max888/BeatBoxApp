@@ -32,10 +32,12 @@
   <% end %>
 </p>
 
+<% if can? :manage, @user %>
 <%= link_to 'Add Song', new_song_path %>
+<% end %>
 
+<% if can? :manage, @user %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> 
+<% end %>
 
-
-
-<%= link_to 'Edit Profile', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

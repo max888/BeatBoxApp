@@ -16,6 +16,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    @comment = Comment.new(song_id: params[:id], user_id: current_user.id) if current_user
     @song = Song.find(params[:id])
 
     respond_to do |format|

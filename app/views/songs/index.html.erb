@@ -15,6 +15,12 @@
     <td><%= link_to song.name, song %></td>
     <td><%= song.genre %></td>
     <td><%= song.user.name %></td>
+    <td>
+    <% if can? :manage, @song %>
+      <%= link_to 'Edit', edit_song_path(song) %>
+      <% end %>
+    </td>
+
     <td><%= link_to 'Edit', edit_song_path(song) %></td>
     <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
