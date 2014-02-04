@@ -19,6 +19,10 @@
   <embed height="50" width="100" src="<%=@song.file %>">
 </audio>
 
+<p>Comment</p>
+<%= link_to 'New Comment', new_comment_path %>
+
+
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

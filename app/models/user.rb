@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   mount_uploader :user_image, UserImageUploader
   mount_uploader :banner_image, BannerImageUploader
 
-  has_many :songs
+  has_many :songs, dependent: :destroy
+
+  has_many :comments
 
   def role?(role)
     self.role.to_s == role.to_s
