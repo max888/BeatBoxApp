@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   mount_uploader :banner_image, BannerImageUploader
 
   has_many :songs
+
+  def role?(role)
+    self.role.to_s == role.to_s
+  end
+
 end
 
 

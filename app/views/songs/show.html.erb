@@ -10,6 +10,9 @@
   <%= @song.genre %>
 </p>
 
+<p>Artist: </p>
+<%= @song.user.name %><br>
+
 <audio controls>
   <source src="<%=@song.file %>" type="audio/mpeg">
   <source src="<%=@song.file %>" type="audio/ogg">

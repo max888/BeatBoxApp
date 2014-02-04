@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 
 
 # Gems used only for assets and not required

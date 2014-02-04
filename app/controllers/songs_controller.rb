@@ -1,6 +1,9 @@
 class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
+
+  load_and_authorize_resource
+  
   def index
     @songs = Song.all
 
