@@ -12,12 +12,14 @@ class Ability
       end  
 
       can :create, Song
+      can :read, :all
 
       can :manage, User do |user_object|
         user_object == user
       end
 
     else
+      can :create, User
       can :read, :all
     end
   end
