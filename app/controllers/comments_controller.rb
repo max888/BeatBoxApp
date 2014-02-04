@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
   def new
     @comment = Comment.new
+    @song = Song.find(params[:song_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +43,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
+    @comment.song_id = params[:song_id]
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
