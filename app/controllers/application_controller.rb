@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   rescue_from CanCan::AccessDenied do |exception|
-  redirect_to root_url , alert: "You can't access this page"
+  redirect_to root_url , alert: "Sorry mate that's not allowed!"
   end
 
   def current_user
