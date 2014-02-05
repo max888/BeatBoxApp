@@ -5,7 +5,8 @@ class SongsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @songs = Song.all
+    @q = Song.search(params[:q])
+    @songs = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

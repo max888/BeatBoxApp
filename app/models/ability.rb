@@ -18,6 +18,10 @@ class Ability
         user_object == user
       end
 
+      can :manage, Comment do |comment|
+        comment.user == user
+      end
+
     else
       can :create, User
       can :read, :all

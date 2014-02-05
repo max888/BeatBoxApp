@@ -26,11 +26,13 @@
 </p>
 
 <p>
-  <b>Songs: </b>
+  <b>Songs: </b><br>
   <% @user.songs.each do |song| %>
   <%= link_to song.name, song_path(song) %>
-  <% end %>
 </p>
+  <% end %>
+
+
 
 <% if can? :manage, @user %>
 <%= link_to 'Add Song', new_song_path %>

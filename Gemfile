@@ -10,6 +10,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
+gem 'ransack'
 
 
 # Gems used only for assets and not required

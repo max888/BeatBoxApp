@@ -10,14 +10,19 @@
   <%= @song.genre %>
 </p>
 
-<p>Artist: </p>
-<%= @song.user.name %><br>
+<p>
+  <b>Artist:</b>
+  <%= @song.user.name %>
+</p>
+<br>
 
+<div class= 'musicplayer'>
 <audio controls>
   <source src="<%=@song.file %>" type="audio/mpeg">
   <source src="<%=@song.file %>" type="audio/ogg">
   <embed height="50" width="100" src="<%=@song.file %>">
 </audio>
+</div>
 
 
 <% if current_user %>
@@ -32,8 +37,18 @@
 <% @song.comments.each do |comment| %>
   <tr>
     <td><%= comment.comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>NAME: <%= comment.user.name %></td>
+
+    <td>
+      <% if can? :manage, comment %>
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+      <% end %>
+    </td>
+    <td>
+      <% if can? :manage, comment %>
+      <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
   </tr><br>
 <% end %>
 
