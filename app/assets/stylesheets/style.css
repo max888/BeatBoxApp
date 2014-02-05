@@ -57,6 +57,7 @@ ul {
 nav ul li {
   display: inline;
   color: #336699;
+  padding: 0 20px 0 20px;
   }
 
 
@@ -71,8 +72,28 @@ header {
   padding: 5px;
 }
 
+#home_image {
+  height: 600px;
+  background-image: url("http://electronicmidwest.com/wp-content/uploads/2013/07/1071251_10151633296619177_1984204187_o.jpg");
+  color: red;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+#home_text {
+  color: #FFFFFF;
+  text-align: center;
+  display: inline-block;
+}
 
 
+  
+
+h2 {
+  font-family: 'Share', cursive;
+  font-size: 50px;
+
+}
 
 
 /*-------------Fixing logo-------------*/

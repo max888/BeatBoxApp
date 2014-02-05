@@ -96,8 +96,6 @@ class CommentsController < ApplicationController
 
   end
 
-# Comment.where(flag: true)
 
 
-  
 end

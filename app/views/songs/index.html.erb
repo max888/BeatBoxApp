@@ -1,4 +1,4 @@
-<h1>All Songs</h1>
+<h2>All Songs</h2>
 <%= search_form_for @q do |f| %>
       <p>
         <%= f.label 'search' %>
@@ -9,16 +9,10 @@
       </p>
     <% end %>
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Genre</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @songs.each do |song| %>
   <tr>
+    <td><div class="user_pic"><%= image_tag(song.user.user_image) %></div></td>
     <td><%= link_to song.name, song %></td>
     <td><%= song.genre %></td>
     <td><%= song.user.name %></td>

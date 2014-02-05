@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @user.name %>
-</p>
+</h2>
 
 <p>
   <b>Bio:</b>
@@ -12,7 +11,7 @@
 
 <p>
   <b>User image:</b>
-  <div class="user_pic">
+    
     <%= link_to image_tag(@user.user_image.thumb.url), @user.user_image.detail.url %>
   </div>
 </p>
