@@ -82,8 +82,22 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to @comment.song }
       format.json { head :no_content }
     end
   end
+
+  def flag
+    @comment = Comment.find(params[:id])
+    @comment.flag = true
+    @comment.save
+
+    redirect_to @comment.song
+
+  end
+
+# Comment.where(flag: true)
+
+
+  
 end

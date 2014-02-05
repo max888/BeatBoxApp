@@ -12,7 +12,9 @@
 
 <p>
   <b>User image:</b>
-  <%= link_to image_tag(@user.user_image.thumb.url), @user.user_image.detail.url %>
+  <div class="user_pic">
+    <%= link_to image_tag(@user.user_image.thumb.url), @user.user_image.detail.url %>
+  </div>
 </p>
 
 <p>

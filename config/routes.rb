@@ -1,7 +1,10 @@
 BeatboxApp::Application.routes.draw do
 
 
-  resources :comments
+  resources :comments do
+    get 'flag', on: :member
+  end
+  
 
 
   resources :songs

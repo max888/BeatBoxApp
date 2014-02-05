@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140204151929) do
+ActiveRecord::Schema.define(:version => 20140205190354) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20140204151929) do
     t.integer  "song_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "flag"
   end
 
   create_table "songs", :force => true do |t|

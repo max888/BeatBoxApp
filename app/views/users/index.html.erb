@@ -20,7 +20,8 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= image_tag(user.user_image.thumb.url) %></td>
+    <td><div class="user_pic"><%= image_tag(user.user_image.thumb.url) %>
+    </div></td>
     <td><%= link_to user.name, user %></td>  
     <td>
       <% if can? :manage, @user %>

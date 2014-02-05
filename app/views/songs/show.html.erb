@@ -28,8 +28,12 @@
 <% if current_user %>
 <%= form_for @comment do |f| %>
   <%= f.hidden_field :song_id %>
-  <%= f.hidden_field :user_id %>
-  <%= f.text_area :comment %>
+
+   <!-- jonny will go over why i dont need this later -->
+  <%= f.hidden_field :user_id %> 
+
+  <%= f.text_field :comment %>
+  <br>
   <%= f.submit "Submit" %>
 <% end %>
 <% end %>
@@ -39,17 +43,23 @@
     <td><%= comment.comment %></td>
     <td>NAME: <%= comment.user.name %></td>
 
-    <td>
-      <% if can? :manage, comment %>
-      <%= link_to 'Edit', edit_comment_path(comment) %>
+    
+    <% if can? :manage, comment %>
+      <td>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+      </td>
+      <td>
+        <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       <% end %>
-    </td>
-    <td>
-      <% if can? :manage, comment %>
-      <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </td>
-  </tr><br>
+      <br>
+      <td>
+        <%= link_to 'Flag Comment', flag_comment_path(comment), data: { confirm: 'Flag comment as innapropriate ' } unless comment.flag %>
+      </td>
+      <br>
+    
+  </tr>
+  <br>
 <% end %>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
