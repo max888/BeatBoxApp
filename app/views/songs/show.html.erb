@@ -54,7 +54,11 @@
       <% end %>
       <br>
       <td>
-        <%= link_to 'Flag Comment', flag_comment_path(comment), data: { confirm: 'Flag comment as innapropriate ' } unless comment.flag %>
+        <% if comment.flag  %>
+        <p>Comment flagged innapropriate</p>
+        <% else %>
+        <%= link_to 'Flag Comment', flag_comment_path(comment), data: { confirm: 'Flag comment as innapropriate?' } %>
+        <% end %>
       </td>
       <br>
     
