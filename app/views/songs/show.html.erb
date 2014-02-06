@@ -38,30 +38,30 @@
 <% end %>
 
 <% @song.comments.each do |comment| %>
-  <tr>
-    <td><%= comment.comment %></td>
-    <td>NAME: <%= comment.user.name %></td>
+  <ul>
+    <li><%= comment.comment %></li>
+    <li>NAME: <%= comment.user.name %></li>
 
     
     <% if can? :manage, comment %>
-      <td>
+      <li>
         <%= link_to 'Edit', edit_comment_path(comment) %>
-      </td>
-      <td>
+      </li>
+      <li>
         <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
+      </li>
       <% end %>
       <br>
-      <td>
+      <li>
         <% if comment.flag  %>
           <p>Comment flagged innapropriate</p>
         <% else %>
           <%= link_to 'Flag Comment', flag_comment_path(comment),method: :put, data: { confirm: 'Flag comment as innapropriate?' } %>
         <% end %>
-      </td>
+      </li>
       <br>
     
-  </tr>
+  </ul>
   <br>
 <% end %>
 

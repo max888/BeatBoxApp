@@ -19,21 +19,21 @@
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><div class="user_pic"><%= image_tag(user.user_image.thumb.url) %>
-    </div></td>
-    <td><%= link_to user.name, user %></td>  
-    <td>
+  <ul>
+    <li><div class="user_pic"><%= image_tag(user.user_image.thumb.url) %>
+    </div></li>
+    <li><%= link_to user.name, user %></li>  
+    <li>
       <% if can? :manage, @user %>
       <%= link_to 'Edit', edit_user_path(user) %>
       <% end %>
-    </td>
-    <td>
+    </li>
+    <li>
       <% if can? :manage, @user %>
       <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-    </td>
-  </tr>
+    </li>
+  </ul>
 <% end %>
 </table>
 

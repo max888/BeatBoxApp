@@ -42,6 +42,11 @@
  /* border: 5px solid red;*/
 }
 
+body, a {
+  font-weight: 200;
+}
+
+
 nav {
   text-align: center;
  /* border: 2px solid green;*/
@@ -68,18 +73,37 @@ header {
   margin: 0;
 }
 
+a {
+  color: #275058;
+}
+
+a:hover {
+  font-weight: 500;
+  color: #266780;
+  text-decoration: none;
+}
+
 .user_pic {
   max-width: 100px;
   padding-top: 5px;
   padding-bottom: 5px;
-  display: inline-block;
+  text-align: center;
+}
+
+.user_pic img {
+  border-radius: 200%;
 }
 
 .user_pic.profile {
+  border-radius: 200%;
   max-width: 100px;
   padding-top: 15px;
   padding-bottom: 5px;
   display: inline-block;
+}
+
+.user_pic.profile img {
+  border-radius: 100px;
 }
 
 #home_image {
@@ -104,6 +128,11 @@ header {
 /*  border: 5px solid red;*/
   /*background: black;
   opacity: 50%;      */
+  border-radius: 116px;
+width: 64%;
+text-align: center;
+padding: auto auto;
+margin: auto;
 }
 
 
@@ -159,6 +188,31 @@ h2 {
 }
 
 .profile_nav {
+  padding-top: 15px;
+}
+
+.song_div {
+  font-size:  40px;
+  padding: 10px 0;
+}
+
+.song_index {
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+.song_index li, ul {
+  display: inline-block;
+  padding: 5px;
+}
+
+.song_index p {
+  text-align: right;
+}
+
+.song_name {
+  width: 400px;
 }
 
 footer {

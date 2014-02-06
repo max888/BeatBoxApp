@@ -11,22 +11,21 @@
 <table>
 
 <% @songs.each do |song| %>
-  <tr>
-    <td><div class="user_pic"><%= image_tag(song.user.user_image) %></div></td>
-    <td><%= link_to song.name, song %></td>
-    <td><%= song.genre %></td>
-    <td><%= song.user.name %></td>
-    <td>
+  <ul class="song_div song_index">
+    <li><div class="user_pic"><%= image_tag(song.user.user_image) %></div></li>
+    <li class="song_name"><%= link_to song.name, song %></li>  
+    <li class="index_name"><p><%= song.user.name %></p></li>  
+    <li>
       <% if can? :manage, @song %>
       <%= link_to 'Edit', edit_song_path(song) %>
       <% end %>
-    </td>
-    <td>
+    </li>
+    <li>
       <% if can? :manage, @song %>
       <%= link_to 'Delete Song', song, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-    </td>
-  </tr>
+    </li>
+  </ul>
 <% end %>
 </table>
 

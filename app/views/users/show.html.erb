@@ -21,12 +21,17 @@
 </div>
 
 
-<h2><div id= "song_title">Songs: </div></h2><br>
-  <div id="profile_song">
+  
+ 
+  <h2><div id= "song_title">Songs: </div></h2><br>
+    <div id="profile_song">
       <% @user.songs.each do |song| %>
-      <%= link_to song.name, song_path(song) %><br>
+        <div class= "song_div">
+          <%= link_to song.name, song_path(song) %>
+        </div>
       <% end %>
- </div>
+   </div>
+</table>
 
 
 
