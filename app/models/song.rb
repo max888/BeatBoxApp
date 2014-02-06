@@ -4,6 +4,11 @@ class Song < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments
+
+  validates :name, presence: true
+  validates :name, :length => { :maximum => 50 }
+
+  validates :file, presence: true
 end
 
 

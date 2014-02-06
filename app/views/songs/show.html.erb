@@ -4,15 +4,15 @@
   <%= @song.name %>
 </h2>
 
+<h3><%= @song.user.name %></h3>
+
+
 <p>
   <b>Genre:</b>
   <%= @song.genre %>
 </p>
 
-<p>
-  <b>Artist:</b>
-  <%= @song.user.name %>
-</p>
+
 <br>
 
 <div class= 'musicplayer'>
@@ -22,6 +22,8 @@
   <embed height="50" width="100" src="<%=@song.file %>">
 </audio>
 </div>
+
+<h3>Comment:</h3>
 
 
 <% if current_user %>
@@ -36,32 +38,34 @@
   <%= f.submit "Submit" %>
 <% end %>
 <% end %>
-
+<h4>Comments(<%= @song.comments.count %>)</h4>
 <% @song.comments.each do |comment| %>
-  <ul>
-    <li><%= comment.comment %></li>
-    <li>NAME: <%= comment.user.name %></li>
+  <div class= "song_comment">
+    <ul>
+      <li><%= comment.comment %></li>
+      <li><%= comment.user.name %></li>
 
-    
-    <% if can? :manage, comment %>
-      <li>
-        <%= link_to 'Edit', edit_comment_path(comment) %>
-      </li>
-      <li>
-        <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
-      <% end %>
-      <br>
-      <li>
-        <% if comment.flag  %>
-          <p>Comment flagged innapropriate</p>
-        <% else %>
-          <%= link_to 'Flag Comment', flag_comment_path(comment),method: :put, data: { confirm: 'Flag comment as innapropriate?' } %>
+      
+      <% if can? :manage, comment %>
+        <li>
+          <%= link_to 'Edit', edit_comment_path(comment) %>
+        </li>
+        <li>
+          <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
         <% end %>
-      </li>
-      <br>
-    
-  </ul>
+        <br>
+        <li>
+          <% if comment.flag  %>
+            <p>Comment flagged innapropriate</p>
+          <% else %>
+            <%= link_to 'Flag Comment', flag_comment_path(comment),method: :put, data: { confirm: 'Flag comment as innapropriate?' } %>
+          <% end %>
+        </li>
+        <br>
+      
+    </ul>
+  </div>
   <br>
 <% end %>
 
