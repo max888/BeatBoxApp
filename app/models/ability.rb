@@ -13,6 +13,7 @@ class Ability
 
       can :create, Song
       can :read, :all
+      can :flag, Comment
 
       can :manage, User do |user_object|
         user_object == user

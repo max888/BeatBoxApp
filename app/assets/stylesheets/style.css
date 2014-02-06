@@ -22,6 +22,7 @@
   max-width: 900px;
 /*  border: 5px solid black;*/
   padding: 10px;
+  position: relative;
 }
 
 .authentication {
@@ -69,30 +70,100 @@ header {
 
 .user_pic {
   max-width: 100px;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.user_pic.profile {
+  max-width: 100px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 #home_image {
   height: 600px;
   background-image: url("http://electronicmidwest.com/wp-content/uploads/2013/07/1071251_10151633296619177_1984204187_o.jpg");
-  color: red;
-  max-width: 100%;
-  vertical-align: middle;
+  /*max-width: 100%;
+  vertical-align: middle;*/
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;  
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #home_text {
   color: #FFFFFF;
   text-align: center;
-  display: inline-block;
+/*  display: inline-block;*/
+  padding: 20px;
+  background-color: rgba(44,68,168,0.4);
+/*  border: 5px solid red;*/
+  /*background: black;
+  opacity: 50%;      */
 }
 
 
+#banner_pic {
+/*    border: 3px solid yellow;*/
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;  
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#profile_title {
   
+/*  border: 3px solid red;*/
+    text-align: center;
+    z-index:100;
+    position:absolute;    
+    color:white;
+    font-size:100px;
+    font-weight:bold;
+    width: 100%;
+    height: 300px;
+    padding-top: 100px;
+}
+
+#bio {
+  float: right;
+  width: 85%;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px dotted grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.profile_song {
+  display: -webkit-inline-box;
+  width: 100%;
+}
+
 
 h2 {
   font-family: 'Share', cursive;
   font-size: 50px;
 
+}
+
+#song_title {
+  color: orange;
+}
+
+.profile_nav {
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -102,5 +173,7 @@ h2 {
   display: inline-block;
   width: 100%;
 }
+
+
 
 

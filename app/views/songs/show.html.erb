@@ -54,9 +54,9 @@
       <br>
       <td>
         <% if comment.flag  %>
-        <p>Comment flagged innapropriate</p>
+          <p>Comment flagged innapropriate</p>
         <% else %>
-        <%= link_to 'Flag Comment', flag_comment_path(comment), data: { confirm: 'Flag comment as innapropriate?' } %>
+          <%= link_to 'Flag Comment', flag_comment_path(comment),method: :put, data: { confirm: 'Flag comment as innapropriate?' } %>
         <% end %>
       </td>
       <br>

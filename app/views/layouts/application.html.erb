@@ -18,12 +18,9 @@
     <header>
       <div class= "authentication">
         <% flash.each do |name, message| %>
-         <div class="flash-message flash-message-<%= name %>">
-            <%= message %>
-         </div>
-
-
-         
+           <div class="flash-message flash-message-<%= name %>">
+              <%= message %>
+           </div>
         <% end %>
         
           <% if current_user %>
@@ -52,9 +49,11 @@
           </nav>
      </header>
     <div class= "yield">
-    <%= yield %>
-  </div>
-
+      <%= yield %>
+    </div>
+    <footer>
+      <h4>&copy;Jonny is the (second) best</h4>
+    </footer>
   </div>
   </body>
 </html>
